@@ -73,16 +73,12 @@ public class RecordActivity extends AppCompatActivity {
     }
 
     public void save() {
-        TextView tvDescripcion = (TextView) findViewById(R.id.description);
-        TextView tvAmount = (TextView) findViewById(R.id.amount);
-
-        record.setDescription(tvDescripcion.getText().toString());
-        record.setAmount(Double.valueOf(tvAmount.getText().toString()));
-
-        if (!record.getDescription().isEmpty() && !record.getAmount().toString().isEmpty()) {
-            DRecord data = null;
+        if (validateField()) {
             try {
-                data = new DRecord(this, Record.class);
+                record.setDescription(tvDescripcion.getText().toString());
+                record.setAmount(Double.valueOf(tvAmount.getText().toString()));
+
+                DRecord data = new DRecord(this, Record.class);
 
 //                if (data.searchByNombre(entity.getNombre().trim())) {
 //                    Toast.makeText(this, "Ya existe un concepto con el nombre indicado", Toast.LENGTH_SHORT).show();
@@ -101,16 +97,33 @@ public class RecordActivity extends AppCompatActivity {
                 Log.e(App.TAG, "Record inserted");
                 Toast.makeText(this, "Registro guardado correctamente", Toast.LENGTH_SHORT).show();
                 finish();
+
 //                }
 
             } catch (Exception e) {
                 e.printStackTrace();
                 Log.e(App.TAG, "Error al guardar el registro: " + e.toString());
             }
-
-        } else {
-            Toast.makeText(this, "Nombre no puede ser vacio", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    private boolean validateField() {
+        boolean sw = true;
+        if (tvDescripcion.getText().toString().isEmpty()) {
+            Toast.makeText(this, "Descripcion necesita un valor", Toast.LENGTH_SHORT).show();
+            sw = false;
+        } else if (tvAmount.getText().toString().isEmpty()) {
+            Toast.makeText(this, "Monto necesita un valor", Toast.LENGTH_SHORT).show();
+            sw = false;
+        } else {
+            try {
+                Double.parseDouble(tvAmount.getText().toString());
+            } catch (Exception e) {
+                Toast.makeText(this, "Monto formato no valido", Toast.LENGTH_SHORT).show();
+                sw = false;
+            }
+        }
+        return sw;
     }
 
     public void remove() {
@@ -163,4 +176,5 @@ public class RecordActivity extends AppCompatActivity {
     public void onBackPressed() {
         finish();
     }
+
 }

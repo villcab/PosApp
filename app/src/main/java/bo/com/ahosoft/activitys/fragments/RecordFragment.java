@@ -125,10 +125,6 @@ public class RecordFragment extends Fragment {
             entitys = data.listByDate(date.getTime());
             sumarTotal();
 
-            for (Record item : entitys) {
-                Log.e(App.TAG, item.toString());
-            }
-
         } catch (Exception e) {
             Log.e(App.TAG, "Error al cargar la entidades: " + e.toString());
         }

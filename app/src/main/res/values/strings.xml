@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">PosApp</string>
+
+    <!-- Items nav -->
+    <string name="nav_home">Inicio</string>
+    <string name="nav_product">Productos</string>
+    <string name="nav_record">Records</string>
+    <string name="nav_order">Ordenes</string>
+    <string name="nav_bill">Facturas</string>
+    <string name="nav_logout">Cerrar Sesión</string>
+    <string name="nav_setting">Configuración</string>
+    <string name="nav_category">Categoria</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

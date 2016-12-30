@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:checked="true"
+            android:icon="@drawable/ic_home_black_24dp"
+            android:title="@string/nav_home" />
+        <item
+            android:id="@+id/nav_product"
+            android:icon="@drawable/ic_store_black_24dp"
+            android:title="@string/nav_product" />
+        <item
+            android:id="@+id/nav_record"
+            android:icon="@drawable/ic_shopping_cart_black_24dp"
+            android:title="@string/nav_record" />
+        <item
+            android:id="@+id/nav_ordenes"
+            android:icon="@drawable/ic_truck"
+            android:title="@string/nav_order" />
+        <item
+            android:id="@+id/nav_facturas"
+            android:icon="@drawable/ic_file_document"
+            android:title="@string/nav_bill" />
+        <item
+            android:id="@+id/nav_categorias"
+            android:icon="@drawable/ic_truck"
+            android:title="@string/nav_category" />
+
+        <!-- Sección de configuración -->
+        <item
+            android:id="@+id/configuration_section"
+            android:title="@string/nav_setting">
+            <menu>
+                <item
+                    android:id="@+id/nav_log_out"
+                    android:icon="@android:drawable/ic_lock_power_off"
+                    android:title="@string/nav_logout" />
+            </menu>
+        </item>
+    </group>
+
+</menu>

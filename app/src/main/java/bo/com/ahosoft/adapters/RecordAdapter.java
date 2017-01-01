@@ -1,12 +1,9 @@
 package bo.com.ahosoft.adapters;
 
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
@@ -15,7 +12,6 @@ import java.util.List;
 import bo.com.ahosoft.R;
 import bo.com.ahosoft.activitys.fragments.RecordFragment;
 import bo.com.ahosoft.entitys.Record;
-import bo.com.ahosoft.utils.App;
 
 public class RecordAdapter extends RecyclerView.Adapter<RecordAdapter.EntityViewHolder> {
 
@@ -32,7 +28,7 @@ public class RecordAdapter extends RecyclerView.Adapter<RecordAdapter.EntityView
 
     @Override
     public EntityViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.card_record, viewGroup, false);
+        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.record_card, viewGroup, false);
         return new EntityViewHolder(v);
     }
 
